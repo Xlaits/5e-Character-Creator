@@ -5,13 +5,18 @@
 
 using namespace std;
 
+void menu();
+void charNew();
+void charLoad();
+
 int main()
 {
 	//Initialize Variables
-	string file = "NO_ENTRY";
 
 	//Begin Program
-	cout << "-- Dungeons & Dragons --\n-- Character Creator --\n";
+	menu();
+	
+	return 0;
 }
 
 void menu()
@@ -23,8 +28,31 @@ void menu()
 	//Begin Functionality
 	while(running)
 	{
+		cout << "-- Dungeons & Dragons --\n-- Character Creator --\n";
 		cout << "New Character (1)\nLoad Character\nExit (3)\n";
 		cout << "Make a selection: ";
 		cin >> usrSel;
+		if(userSel == 1)
+			charNew();
+		else if(userSel == 2)
+			charLoad();
+		else if(userSel == 3)
+			running = false;
+		else
+			cout << "Error: No option " << userSel << " availabe. Try again.\n";
 	}
+}
+
+void charLoad()
+{
+	//Initialize Variables
+	
+	//Begin Functionality
+}
+
+void charNew()
+{
+	//Initialize Variables
+	
+	//Begin Functionality
 }
