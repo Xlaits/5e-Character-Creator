@@ -8,6 +8,7 @@ class Races()
 private:
 	string race, size;
 	int speed;
+	const string race[14] = {"Hill Dwarf", "Mountain Dwarf", "High Elf", "Wood Elf", "Drow", "Lightfoot Halfling", "Stout Halfling", "Human", "Dragonborn", "Forest Gnome", "Rock Gnome", "Half-Elf", "Half-Orc", "Tiefling"}
 
 public:
 	Races(string ra = "Human", string si = "Medium", int sp = "30")
