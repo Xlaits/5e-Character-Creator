@@ -14,7 +14,7 @@ public:
 	{
 		race = ra;
 		size = si;
-		speed = sp;
+		speed = sp; 
 	}
 	
 	string modRace(int mode = 0, string ra = "NULL")
