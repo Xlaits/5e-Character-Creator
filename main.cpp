@@ -43,7 +43,10 @@ void menu()
 		else if(usrSel == 2)
 			charLoad();
 		else if(usrSel == 3)
+                {
+                        ClearScreen();
 			running = false;
+                }
 		else
 			cout << "Error: No option " << usrSel << ". Try again.\n";
 	}
@@ -57,7 +60,9 @@ void charLoad()
 
 	//Begin Functionality
 	ClearScreen();
+        cin.sync();
 	cout << "Please enter a character name: ";
+        cin.ignore();
 	cin >> character;
 }
 
@@ -72,6 +77,7 @@ void charNew()
 	ClearScreen();
 	cout << "Please enter a character name: ";
 	cin.sync();
+        cin.ignore();
 	getline(cin, character);
 	newChar.modName(1, character);
 	raceSel(newChar);
@@ -81,7 +87,7 @@ void raceSel(Character newChar)
 {
 	//Initialize Variables
     int usrInt;
-    bool run = True;
+    bool run = true;
 	//Begin Functionality
     cout << "What is " << newChar.modName() << "'s race?\n";
 	cout << "Dwarf(1), Elf(2), Halfling(3), Human(4), Dragonborn(5), Gnome(6), Half-Elf(7), Half-Orc(8), or Teifling(9): ";
@@ -99,8 +105,8 @@ void raceSel(Character newChar)
     }
     else if(usrInt == 2)
     {
-        run = True;
-        while (run == True)
+        run = true;
+        while (run == true)
         {
             cout << "High Elf(1), Wood Elf(2), or Drow(3): ";
             cin.sync();
@@ -108,17 +114,17 @@ void raceSel(Character newChar)
             if (usrInt == 1)
             {
                 newChar.modRace(1,2);
-                run = False;
+                run = false;
             }
             else if(usrInt == 2)
             {
                 newChar.modRace(1,3);
-                run = False;
+                run = false;
             }
             else if(usrInt == 3)
             {
                 newChar.modRace(1,4);
-                run = False;
+                run = false;
             }
             else
                 cout << "That was not a choice. Please try again.";
@@ -126,8 +132,8 @@ void raceSel(Character newChar)
     }
     else if(usrInt == 3)
     {
-        run = True;
-        while(run = True)
+        run = true;
+        while(run = true)
         {
         cout << "Lightfoot Halfling(1) or Stout Halfling(2): ";
         cin.sync();
@@ -135,12 +141,12 @@ void raceSel(Character newChar)
         if(usrInt == 1)
         {
             newChar.modRace(1,5);
-            run = False;
+            run = false;
         }
         else if(usrInt == 2)
         {
             newChar.modRace(1,6);
-            run = False;
+            run = false;
         }
         else
             cout << "That is not an option. Try again.";

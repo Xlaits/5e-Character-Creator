@@ -1,4 +1,5 @@
-#include <windows.h>
+#ifdef _WIN32
+    #include <windows.h>
 
 class ClearScreen
 {
@@ -40,3 +41,15 @@ public:
         SetConsoleCursorPosition( hStdOut, homeCoords );
     }
 };
+
+#else
+    #include <stdio.h>
+
+    class ClearScreen{
+        public:
+            ClearScreen(){
+                printf("\033[H\033[J");
+                cin.sync();
+            }
+    };
+#endif
